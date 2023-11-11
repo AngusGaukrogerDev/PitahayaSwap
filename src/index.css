@@ -1,13 +1,56 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.html::-webkit-scrollbar {
+  display: none;
+}
+
+h1{
+  font-family: 'Poppins', sans-serif;
+  color: #292f36;
+  text-shadow: 2px 3px 5px rgba(25, 29, 33, 0.25);
+}
+
+h2{
+  font-family: 'Poppins', sans-serif;
+  color: #292f36;
+  text-shadow: 2px 3px 5px rgba(25, 29, 33, 0.1);
+
+}
+
+h3,p{
+  font-family: 'Mulish', sans-serif;
+  color: #292f36;
+  text-shadow: 2px 3px 5px rgba(25, 29, 33, 0.1);
+}
+span{
+  font-family: 'Mulish', sans-serif;
+
+}
+button{
+  background-color:#d91a4dff;
+  color: #fffbffff; 
+  box-shadow: rgba(25, 35, 33, 0.15) 0px 0px 20px;
+  
+}
+
+img{
+  box-shadow: rgba(25, 35, 33, 0.25) 0px 0px 20px;
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
