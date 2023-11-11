@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { ethers } from "ethers";
 import "../styles/home.css";
 import Metamask from "../components/metamask";
-import { ethers } from "ethers";
 import SwapScreen from "../components/swapscreen";
+
 
 const Home = () => {
   // usetstate for storing and retrieving wallet details
@@ -10,6 +11,8 @@ const Home = () => {
     address: "",
     Balance: null,
   });
+
+  const [connectionSuccessful, setConnectionSuccessful] = useState(false);
 
   // Button handler button for handling a
   // request event for metamask
@@ -48,27 +51,14 @@ const Home = () => {
     setdata({
       address: account,
     });
-
+    setConnectionSuccessful(true);
     // Setting a balance
     getbalance(account);
   };
 
   return (
     <div className="h-screen w-full flex flex-col justify-center items-center gap-2">
-      <h1 className="text-2xl xl:text-4xl font-extrabold">
-        Welcome to PitahayaSwap
-      </h1>
-      <Metamask onConnect={btnhandler} />
-      {/* <button className="px-4 py-2 rounded-xl" onClick={}>
-            Connect Wallet
-        </button> */}
-      <SwapScreen />
-      <div className="flex flex-col justify-center items-center">
-        <strong>Address: </strong>
-        {data.address}
-        <strong>Balance: </strong>
-        {data.balance}
-      </div>
+      {connectionSuccessful ? (<SwapScreen />) : (<Metamask onConnect={btnhandler} />) }
     </div>
   );
 };
