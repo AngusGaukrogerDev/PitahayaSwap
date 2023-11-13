@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import "../styles/home.css";
 import Metamask from "../components/metamask";
 import SwapScreen from "../components/swapscreen";
-
-
+import { ChainId, Fetcher, WETH, Route } from "@uniswap/sdk";
+ 
 const Home = () => {
   // usetstate for storing and retrieving wallet details
   const [data, setdata] = useState({
     address: "",
     Balance: null,
   });
-
   const [connectionSuccessful, setConnectionSuccessful] = useState(false);
 
+  const chainId = ChainId.MAINNET;
+  const tokenAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F'; //DAI
+  
+  const init = async () => {
+    const usdc = await Fetcher.fetchTokenData(chainId, tokenAddress); 
+    const weth = WETH[chainId];
+    const pair = await Fetcher.fetchPairData(usdc, weth);
+    const route = new Route([pair], weth);
+    console.log(route.midPrice.toSignificant(6));
+    console.log(route.midPrice.invert().toSignificant(6));
+  }
   // Button handler button for handling a
   // request event for metamask
   const btnhandler = () => {
@@ -55,6 +65,10 @@ const Home = () => {
     // Setting a balance
     getbalance(account);
   };
+
+  useEffect(() => {
+    init();
+  })
 
   return (
     <div className="h-screen w-full flex flex-col justify-center items-center gap-2">
