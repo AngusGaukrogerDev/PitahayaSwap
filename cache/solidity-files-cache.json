@@ -1,0 +1,115 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Web3\\ReactTokenSwap\\pitahayaswap\\contracts\\SingleSwap.sol": {
+      "lastModificationDate": 1699988692611,
+      "contentHash": "bb960161bfa649aa40026bc707855443",
+      "sourceName": "contracts/SingleSwap.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol"
+      ],
+      "versionPragmas": [
+        "=0.7.6"
+      ],
+      "artifacts": [
+        "IERC20",
+        "SingleSwap"
+      ]
+    },
+    "C:\\Web3\\ReactTokenSwap\\pitahayaswap\\node_modules\\@uniswap\\v3-periphery\\contracts\\interfaces\\ISwapRouter.sol": {
+      "lastModificationDate": 1699990008245,
+      "contentHash": "ffd42687b3db01d30c24213d961fcf9f",
+      "sourceName": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "ISwapRouter"
+      ]
+    },
+    "C:\\Web3\\ReactTokenSwap\\pitahayaswap\\node_modules\\@uniswap\\v3-core\\contracts\\interfaces\\callback\\IUniswapV3SwapCallback.sol": {
+      "lastModificationDate": 1699990008027,
+      "contentHash": "a8ba2d37b0107911ae0e3b0e123cbd83",
+      "sourceName": "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol",
+      "solcConfig": {
+        "version": "0.7.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV3SwapCallback"
+      ]
+    }
+  }
+}

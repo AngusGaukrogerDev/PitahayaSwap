@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import "../styles/home.css";
 import Metamask from "../components/metamask";
 import SwapScreen from "../components/swapscreen";
-import { ChainId, Fetcher, WETH, Route } from "@uniswap/sdk";
+// import { ChainId, Fetcher, WETH, Route } from "@uniswap/sdk";
  
 const Home = () => {
   // usetstate for storing and retrieving wallet details
@@ -13,17 +13,21 @@ const Home = () => {
   });
   const [connectionSuccessful, setConnectionSuccessful] = useState(false);
 
-  const chainId = ChainId.MAINNET;
-  const tokenAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F'; //DAI
+  // const chainId = ChainId.MAINNET;
+  // const tokenAddress = "0x6B175474E89094C44Da98b954EedeAC495271d0F"; //DAI
   
-  const init = async () => {
-    const usdc = await Fetcher.fetchTokenData(chainId, tokenAddress); 
-    const weth = WETH[chainId];
-    const pair = await Fetcher.fetchPairData(usdc, weth);
-    const route = new Route([pair], weth);
-    console.log(route.midPrice.toSignificant(6));
-    console.log(route.midPrice.invert().toSignificant(6));
-  }
+  // const init = async () => {
+  //   try {
+  //     const dai = await Fetcher.fetchTokenData(chainId, tokenAddress); 
+  //     const weth = WETH[chainId];
+  //     const pair = await Fetcher.fetchPairData(dai, weth);
+  //     const route = new Route([pair], weth);
+  //     console.log(route.midPrice.toSignificant(6));
+  //     console.log(route.midPrice.invert().toSignificant(6));
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // }
   // Button handler button for handling a
   // request event for metamask
   const btnhandler = () => {
